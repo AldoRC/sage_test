@@ -156,14 +156,20 @@ q = next_prime(p)
 N = p*q
 ZmodN = Zmod(N);
 
-# Create problem (for the demo)
+print("Create problem (for the demo)")
 K = ZZ.random_element(0, 2^Kbits)
+print(K)
 Kdigits = K.digits(2)
-M = [0]*Kbits + [1]*(length_N-Kbits); 
+print(Kdigits)
+M = [0]*Kbits + [1]*(length_N-Kbits);
+print(M)
 for i in range(len(Kdigits)):
     M[i] = Kdigits[i]
+print(M)
 M = ZZ(M, 2)
+print(M)
 C = ZmodN(M)^e
+print(C)
 
 # Problem to equation (default)
 P.<x> = PolynomialRing(ZmodN) #, implementation='NTL')
